@@ -3,7 +3,7 @@
 <head>
     <link rel="icon" href="/img/p.png">
 
-    <title>Generate terraform file </title>
+    <title>Generate terraform files </title>
 
     <link rel="stylesheet" href="css/default.css" id="theme-color">
     <style>

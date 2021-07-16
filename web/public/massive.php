@@ -164,10 +164,8 @@ session_start();
           <img src="azure.png" alt="Forest" class="center" style="width:50%;height: 100%">
         </div>
     </div>  -->
-<br>
 
 
-<section>
    <div class="container-fluid" style="background-color: #120024">
         <nav class="navbar navbar-expand-md navbar-dark">
         <a class="navbar-brand heading-black" href="index.php">
@@ -193,11 +191,7 @@ session_start();
                 </ul>
             </div>
         </nav>
-    </div>
-</section>
-<br>
 
-<section class="py-7 py-md-0 bg-hero" id="content">
     <div class="container">
     <div class="container">
     <div class="container">

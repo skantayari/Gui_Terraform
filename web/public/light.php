@@ -161,10 +161,7 @@ session_start();
           <img src="azure.png" alt="Forest" class="center" style="width:50%;height: 100%">
         </div>
     </div>  -->
-<br>
 
-
-<section>
    <div class="container-fluid" style="background-color: #120024">
         <nav class="navbar navbar-expand-md navbar-dark">
         <a class="navbar-brand heading-black" href="index.php">
@@ -190,11 +187,8 @@ session_start();
                 </ul>
             </div>
         </nav>
-    </div>
-</section>
-<br>
+    
 
-<section class="py-7 py-md-0 bg-hero" id="content">
     <div class="container">
     <div class="container">
     <div class="container">
@@ -228,7 +222,7 @@ session_start();
             </div>
 
 
-        <h1 style="color:white;text-align:center">  Create virtual network</h1>
+        <h1 style="color:white;text-align:center">  Create virtual network </h1>
         <input type="checkbox" id="myCheck_vnet" onclick="NoEvnet()">
         <label style="color:white;"> I want to assign my VM to an existing virtual network</label><br>
         <div >
@@ -350,7 +344,7 @@ session_start();
     </div> <br>
       
 
-    <h1 style="color:white;text-align: center;"> create virtual machine </h1>
+    <h1 style="color:white;text-align: center;"> Create virtual machine</h1>
 
     <div >
         <input type="text" id="vmname" placeholder=" Name your virtual machine " />
@@ -390,7 +384,6 @@ session_start();
             <option value="Standard_LRS">Standard_LRS </option>
         </select>
     </div><br>
-
     <div >
         <select id="source_image">
             <option selected value="">-- Select image--</option>
@@ -401,7 +394,6 @@ session_start();
             
         </select>
     </div><br>
-
 
     <div >
         <input type="text" id="computer_name" placeholder=" Name your computer_name " />
@@ -414,34 +406,14 @@ session_start();
         <input type="text" class="pw" id="admin_password" placeholder=" Give it a password" />
     </div><br>
 
-
-
         <!--Add to button to save the data.-->
         <div  style="text-align:center;">
           <!-- <input type="button" class="button" id="bt" value="Generate Terraform file" onclick="saveFile()" /> -->
-          <button class="btn btn-primary d-inline-flex flex-row align-items-center " id="bt" onclick="saveFile()" ><span>Generate Terraform file</span></button>
+          <button class="btn btn-primary d-inline-flex flex-row align-items-center " id="bt" onclick="saveFile();saveFile_ansible()" ><span>Generate Terraform file</span></button>
         </div><br>
         
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-</section>
-
+    </div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div>
+</div>
 <script>  
 
 
@@ -830,6 +802,37 @@ session_start();
         }
     }
 
+
+    let saveFile_ansible = () => {
+    	
+        // Get the data from each element on the form.
+
+
+
+
+        // This variable stores all the data.
+        let data = 
+        'ansible'
+        // Convert the text to BLOB.
+
+        
+        const textToBLOB = new Blob([data], { type: 'text/plain' });
+        const sFileName = 'ansible.tf';	   // The file to save the data.
+
+        let newLink = document.createElement("a");
+        newLink.download = sFileName;
+
+        if (window.webkitURL != null) {
+            newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+        }
+        else {
+            newLink.href = window.URL.createObjectURL(textToBLOB);
+            newLink.style.display = "none";
+            document.body.appendChild(newLink);
+        }
+
+            newLink.click(); 
+    }
 </script>
 </body>
 
